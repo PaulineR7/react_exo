@@ -1,6 +1,11 @@
 function Header () {
     const isUserLogged = true;
     const itemInCart = 2;
+    const userLogged = {
+        firstname : 'Pauline',
+        lastname : 'Rémi',
+        job : 'Formation web dev'
+    };
 
     return (
         <header>
@@ -9,7 +14,7 @@ function Header () {
                     <li>Home</li>
                     <li>Product</li>
                     <li>Footer</li>
-                    {isUserLogged ? <li>Pauline Rémi</li> : <li>Veuillez vous connecter</li>}
+                    {isUserLogged ? <li>{userLogged.firstname} {userLogged.lastname} - {userLogged.job}</li> : <li>Veuillez vous connecter</li>}
                     {itemInCart > 0 ? <li>Cart : {itemInCart} </li> : <li>Pas d'item au panier</li>}
                 </ul>
             </nav>
