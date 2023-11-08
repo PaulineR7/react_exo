@@ -1,17 +1,20 @@
 function Product() {
 
-    const nameProduct = [{
+    const nameProduct = [
+        {
             name : "Air Force 1",
             price : 120,
             isPublished : true,
         },
-        {name : "Air Max",
+        {
+            name : "Air Max",
             price : 100,
-            isPublished : true,
+            isPublished : false,
         },
-        {name : "Jordan",
-        price : 200,
-        isPublished : true,
+        {
+            name : "Jordan",
+            price : 200,
+            isPublished : true,
         },
     ]
 
@@ -20,10 +23,20 @@ function Product() {
 
             {nameProduct.map((product) => {
                 return(
-                <article>
-                  <h2>{product.name}</h2>
-                  <p>Prix : {product.price}</p>
+                    <article>
+                        { product.isPublished ? 
+                        (
+                        <>
+                            <h2>{product.name}</h2>
+                            <p>Prix : {product.price}</p>
+                        </>
+                        )
+                        :
+                        (
+                            <p> Il n'est pas publié </p>
+                        )}
                 </article>
+                
             )})}
         </section>
 
